@@ -1,4 +1,4 @@
-download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",destfile = "data.zip")
+download.file("http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",destfile = "data.zip")
 unzip("data.zip")
 read.table("./UCI HAR Dataset/test/X_test.txt") -> testset
 read.table("./UCI HAR Dataset/test/y_test.txt") -> testlabels
@@ -9,6 +9,7 @@ read.table("./UCI HAR Dataset/train/subject_train.txt") -> trainsub
 cbind(testlabels,testsub,testset)-> testsl
 cbind(trainlabels,trainsub,trainset)-> trainsl
 rbind(testsl,trainsl) -> dtset
+
 read.table("./UCI HAR Dataset/features.txt") -> ft
 as.character(ft[,2]) -> ft
 c("activity","subject",ft) -> ft1
@@ -20,7 +21,8 @@ dtset[,g] -> dtt
 name <- c("walking","walkingup","walkingdown","sitting","standing","laying")
 for(i in 1:6) {gsub(i,name[[i]],dtt[,1]) -> dtt[,1]}
 ft1[g] -> clname
-tolower(clname) -> clname; gsub("\\()","",clname) -> clname;
+tolower(clname) -> clname
+gsub("\\()","",clname) -> clname;gsub("bodybody","body",clname) -> clname
 c(clname[1:2],gsub("^","\\mean*",clname[3:68])) -> clname
 colnames(dtt) <- clname
 sapply(split(dtt,dtt[,1:2]),function(x) colMeans(x[,3:68])) -> dtiy
