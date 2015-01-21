@@ -91,8 +91,8 @@ The mean and standard deviation of a Fast Fourier Transform of the magnitude of 
 
 The mean and standard deviation of the magnitude of the tree signals for Jerk Signals:
 
-*	"mean*fbodybodyaccjerkmag-std"
-*	"mean*fbodybodygyromag-mean"
-*	"mean*fbodybodygyromag-std"
-*	"mean*fbodybodygyrojerkmag-mean"
-*	"mean*fbodybodygyrojerkmag-std"
+*	"mean*fbodyaccjerkmag-std"
+*	"mean*fbodygyromag-mean"
+*	"mean*fbodygyromag-std"
+*	"mean*fbodygyrojerkmag-mean"
+*	"mean*fbodygyrojerkmag-std"
