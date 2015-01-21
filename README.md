@@ -49,7 +49,8 @@ for(i in 1:6) {gsub(i,name[[i]],dtt[,1]) -> dtt[,1]}
 
 ## Selecting the columns that are in the data set and making more readable(all lowere cases, without those anoying "()" )
 ft1[g] -> clname
-tolower(clname) -> clname; gsub("\\()","",clname) -> clname;
+tolower(clname) -> clname
+gsub("\\()","",clname) -> clname; gsub("bodybody","body",clname) -> clname
 c(clname[1:2],gsub("^","\\mean*",clname[3:68])) -> clname
 
 ## Putting the column  names with the mean* explation on the data frame
