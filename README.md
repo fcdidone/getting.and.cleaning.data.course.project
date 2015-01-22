@@ -3,7 +3,7 @@ Project for Getting and cleaning data course
 
 ##The first line download the data and save in your working directory
 
-download.file("http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",destfile = "data.zip")
+download.file( "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",  destfile = "data.zip")
 
 ##The next lines unzip the data and read the test and train set, labels and subjects 
 
